@@ -11,6 +11,7 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="lib/angular.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,18 +20,18 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body class="background-main">
+  <body class="background-main" ng-app="MyProfile">
         <!-- header-panner -->
                 <div id="header-banner">
                 <div class="wrapper row">
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
 
-                    <a class="banner-logo-container guest col-md-3" href="http://www.linkedin.com/">
+                    <a class="banner-logo-container guest col-md-6" href="http://www.linkedin.com/">
                         <h2 id="li-logo" class="logo">LinkedIn Home</h2>
                     </a>
-                    <div class="col-md-2"></div>
-                    <nav role="navigation" class="nav guest-nav col-md-4" aria-label="Main site navigation">
-                        <ul role="menubar" class="row">
+                   
+                    <nav role="navigation" class="nav guest-nav col-md-4" aria-label="Main site navigation" style="float: left; text-align: center;">
+                        <ul role="menubar">
                             <li role="menuitem" class="nav-item">
                                 <a class="nav-link" href="http://www.linkedin.com/static?key=what_is_linkedin&amp;trk=hb_what">
                                     What is LinkedIn?
@@ -46,66 +47,101 @@
                              </li>
                          </ul>
                     </nav>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
         <!-- body-code -->
-        <div id="layout-main" class="container-fluid">
+        <div id="layout-main" ng-controller="ExampleController">
             <div class="row" id="content-cv">
-                <div class="col-md-9">
-                    
-                </div>
-                <div id="aux" class="col-md-3">
-                    <section class="insights profile-section">
-                        <div class="name-search">
-                            <h3 class="title">Find a different Jeff Weiner</h3>
-                            <form action="https://www.linkedin.com/pub/dir/" method="get">
-                                <label for="firstName">First Name</label>
-                                <input type="text" name="first" id="firstName" placeholder="First Name">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" name="last" id="lastName" placeholder="Last Name">
-                                <input type="hidden" name="trk" value="prof-samename-search-submit">
-                                <button aria-label="Search" type="submit">
-                                    <span></span>
-                                </button>
-                                <p class="tip">
-                                    <strong>Example: </strong> 
-                                    <a href="https://www.linkedin.com/pub/dir/Jeff/Weiner">Jeff Weiner</a>
-                                </p>
-                            </form>
-                            <ul>
-                                <li class="profile-card">
-                                    <a href="https://www.linkedin.com/in/hrjeff?trk=prof-samename-picture"><img lazyload="true" class="lazy-loaded" width="100" height="100" src="https://media.licdn.com/mpr/mpr/shrink_100_100/AAEAAQAAAAAAAAbnAAAAJGVhY2M0YTkwLWM1YWItNGY3My05MjM5LTk0MjA1YjQ1Yzc0NA.jpg"></a>
-                                    <div class="info"><h4>
-                                        <a href="https://www.linkedin.com/in/hrjeff?trk=prof-samename-name">Jeff Weiner</a>
-                                        </h4>
-                                        <p class="headline">Director of Human Resources at Venture Tech Solutions, Inc.</p>
-                                        <p class="location">United States</p>
+                <div id="" class="col-md-6 col-md-offset-1">
+
+                    <section id="topcard" class="profile-section" style="margin-top: 60px;">
+                    	<div class="profile-card vcard row">
+	                    	<div class="profile-picture col-md-4">
+                                <a href="{{profile.href}}">
+                                    <img src="{{profile.src}}">
+                                </a>
+	                    	</div>
+
+	                    	<div class="profile-overview col-md-8">
+                                <div class="profile-overview-content">
+                                    <h1 id="name" class="fn">{{profile_overview.name}}</h1>
+                                    <p class="headline title" data-section="headline">CEO at LinkedIn</p>
+                                    <dl id="demographics">
+                                        <dt>Location</dt>
+                                        <dd class="descriptor adr"><span class="locality">San Francisco Bay Area</span></dd>
+                                        <dt>Industry</dt>
+                                        <dd class="descriptor">Internet</dd>
+                                    </dl>
+                                    <div class="extra-info">
+                                      <table class="table table-striped">
+                                            <tbody>
+                                              <tr>
+                                                <td>Current</td>
+                                                <td>{{extra_info.current}}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Previous</td>
+                                                <td>{{extra_info.previous}}</td>
+                                              </tr>
+                                              <tr>
+                                                <td>Recommendations</td>
+                                                <td>{{extra_info.recommend}}</td>
+                                              </tr>
+                                               <tr>
+                                                <td>Websites</td>
+                                                <td>{{extra_info.websites}}</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
                                     </div>
-                                </li>
-                                <li class="profile-card">
-                                    <a href="https://www.linkedin.com/in/jeffweiner100?trk=prof-samename-picture">
-                                        <img width="100" height="100" class="lazy-loaded" src="https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_100x100_v1.png"></a>
-                                    <div class="info">
-                                        <h4>
-                                            <a href="https://www.linkedin.com/in/jeffweiner100?trk=prof-samename-name">Jeff Weiner</a>
-                                        </h4>
-                                        <p class="headline">Senior Vice President at Fiserv</p>
-                                        <p class="location">United States</p>
-                                    </div>
-                                </li>
-                                <li class="profile-card">
-                                    <a href="https://www.linkedin.com/in/jeff-weiner-5903682?trk=prof-samename-picture">
-                                        <img width="100" height="100" class="lazy-loaded" src="https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_100x100_v1.png">
-                                    </a>
-                                    <div class="info">
-                                        <h4>
-                                            <a href="https://www.linkedin.com/in/jeff-weiner-5903682?trk=prof-samename-name">Jeff Weiner
-                                            </a>
-                                         </h4>
-                                        <p class="location">United States</p>
-                                    </div>
-                                 </li>
+                                    <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile" title="Jeff is an Influencer" class="influencer-badge">Influencer</a>
+                                </div>
+	                    	</div>
+                    		
+                    	</div>
+                    	<div class="reg-upsell">
+                    		<h2>Join LinkedIn and access {{profile_overview.name}}’s full profile. It’s free!</h2>
+                    		<h3>As a LinkedIn member, you’ll join 400 million other professionals who are sharing connections, ideas, and opportunities.</h3>
+                    		<ul>
+                    			<li>See who you know in common</li>
+                    			<li>Get introduced</li>
+                    			<li>Contact <strong>{{profile_overview.name}}</strong> directly</li>
+                			</ul>
+                			<a href="https://www.linkedin.com/start/view-full-profile?_ed=0_bKBkcZ6t9p27QdIgoeLUuXkzX1gSSl_qdqwwJvSV0YG4ygi9WuSZ6sgPiZqmtjjZ&amp;trk=pprof-0-ts-view_full-0" class="signup-button">View {{profile_overview.name}}'s Full Profile</a>
+            			</div>
+                    </section>
+
+                    <section id="summary" class="profile-section">
+                        <h3 class="title">Summary:</h3>
+                        <div class="description">
+                            {{description.content1}}<br><br> {{description.content2}}<br><br> {{description.content3}}<br><br> {{description.content4}}<br><br> {{description.content5}}
                         </div>
+                    </section>
+                    <section id ="experience" class="profile-section">
+                    <h3 class="title">Experience</h3>
+                    <ul>
+                            <li>
+                                <header class="logo" style="float: right;">
+                                    <a href="https://www.linkedin.com/company/linkedin?trk=ppro_cprof"><img class="lazy-loaded" alt="LinkedIn" src="https://media.licdn.com/media/AAEAAQAAAAAAAAL0AAAAJGMwYWZhNTYxLWJkMTktNDAzMi05NzEzLTlhNzUxMGU0NDg0Mw.png"></a>
+                                </header>
+                                <h4 class="item-title"><a href="https://www.linkedin.com/title/ceo?trk=pprofile_title">CEO</a></h4>
+                                <h5 class="item-subtitle"><a href="https://www.linkedin.com/company/linkedin?trk=ppro_cprof">LinkedIn</a></h5>
+                                <span class="date-range"><time>December 2008</time> – Present (7 years 5 months)</span>
+
+                            </li>
+                            <li class="position reg-upsell"> 
+                                <header class="logo">
+                                    <a href="https://www.linkedin.com/company/linkedin?trk=ppro_cprof"><img class="lazy-loaded" alt="LinkedIn" src="https://media.licdn.com/media/AAEAAQAAAAAAAAL0AAAAJGMwYWZhNTYxLWJkMTktNDAzMi05NzEzLTlhNzUxMGU0NDg0Mw.png"></a>
+                                </header>
+                            </li>
+
+                        </ul>
+                    </section>
+
+                </div>
+
+                <div id="aux" class="col-md-5">
                     
                 </div>
             </div>
@@ -116,5 +152,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js.js"></script>
+
   </body>
+
 </html>
