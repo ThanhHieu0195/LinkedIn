@@ -1,7 +1,7 @@
 .background-main{
 	background-color: #dfdfdf;
-
 }
+
 /*<header-banner>*/
 	#header-banner{
 	    position: fixed;
@@ -149,7 +149,7 @@
 /*reg-upsell*/
 .reg-upsell {
     border-top: 1px solid #ddd;
-    padding: 25px 40px 20px;
+    padding: 25px 40px 30px;
 }
 
 .reg-upsell h2 {
@@ -221,8 +221,13 @@ h3{
     -webkit-margin-end: 0px;
     font-weight: bold;
 }
+.profile-section{
+    margin-top: 60px;
+    padding-bottom: 30px;
+}
 .profile-section .title {
-    font-size: 16px;
+    font-size: 20px;
+    text-shadow: 5px 5px 8px black;
     font-weight: normal;
     line-height: 18px;
     color: #434649;
@@ -230,7 +235,7 @@ h3{
 }
 
 #summary .description {
-    padding: 15px 35px 30px;
+    padding: 10px 10px 3px 35px;
 }
 .profile-section .description {
     font-size: 13px;
@@ -251,3 +256,41 @@ li{
 ul{
     list-style: none;
 }
+
+.position{
+    padding: 30px 30px 30px 5px;
+}
+.position a{
+    color: #000000;
+}
+.position header{
+    float: right;
+}
+
+
+/*Skill*/
+
+.profile-section .pills {
+    padding: 30px 35px;
+}
+.skill ul{
+    display: inline-block;
+}
+.skill li{
+    text-align: center;
+    display: inline-block;
+    list-style-type: circle;
+    background-color: #CFCDD6;
+    line-height: 40px;
+    width: auto;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.skill li:hover{
+    background-color: #226B96;
+}
+.skill a{
+    color: #ffffff;
+}
+
+

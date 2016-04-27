@@ -53,9 +53,9 @@
         <!-- body-code -->
         <div id="layout-main" ng-controller="ExampleController">
             <div class="row" id="content-cv">
-                <div id="" class="col-md-6 col-md-offset-1">
+                <div id="" class="col-md-8 col-md-offset-2">
 
-                    <section id="topcard" class="profile-section" style="margin-top: 60px;">
+                    <section id="topcard" class="profile-section">
                     	<div class="profile-card vcard row">
 	                    	<div class="profile-picture col-md-4">
                                 <a href="{{profile.href}}">
@@ -65,32 +65,20 @@
 
 	                    	<div class="profile-overview col-md-8">
                                 <div class="profile-overview-content">
-                                    <h1 id="name" class="fn">{{profile_overview.name}}</h1>
-                                    <p class="headline title" data-section="headline">CEO at LinkedIn</p>
+                                    <h1 id="name" class="fn">{{profile_overview.fullname}}</h1>
+                                    <p class="headline title" data-section="headline">{{profile_overview.job}}</p>
                                     <dl id="demographics">
                                         <dt>Location</dt>
-                                        <dd class="descriptor adr"><span class="locality">San Francisco Bay Area</span></dd>
+                                        <dd class="descriptor adr"><span class="locality">VietNam</span></dd>
                                         <dt>Industry</dt>
                                         <dd class="descriptor">Internet</dd>
                                     </dl>
                                     <div class="extra-info">
                                       <table class="table table-striped">
                                             <tbody>
-                                              <tr>
-                                                <td>Current</td>
-                                                <td>{{extra_info.current}}</td>
-                                              </tr>
-                                              <tr>
-                                                <td>Previous</td>
-                                                <td>{{extra_info.previous}}</td>
-                                              </tr>
-                                              <tr>
-                                                <td>Recommendations</td>
-                                                <td>{{extra_info.recommend}}</td>
-                                              </tr>
-                                               <tr>
-                                                <td>Websites</td>
-                                                <td>{{extra_info.websites}}</td>
+                                              <tr ng-repeat = "extra_info in extra_infos">
+                                                <td>{{extra_info.name}}</td>
+                                                <td>{{extra_info.content}}</td>
                                               </tr>
                                             </tbody>
                                           </table>
@@ -103,10 +91,8 @@
                     	<div class="reg-upsell">
                     		<h2>Join LinkedIn and access {{profile_overview.name}}’s full profile. It’s free!</h2>
                     		<h3>As a LinkedIn member, you’ll join 400 million other professionals who are sharing connections, ideas, and opportunities.</h3>
-                    		<ul>
-                    			<li>See who you know in common</li>
-                    			<li>Get introduced</li>
-                    			<li>Contact <strong>{{profile_overview.name}}</strong> directly</li>
+                    		<ul ng-repeat="aboutme in aboutmes">
+                                <li>{{aboutme.name}}: {{aboutme.content}}</li>
                 			</ul>
                 			<a href="https://www.linkedin.com/start/view-full-profile?_ed=0_bKBkcZ6t9p27QdIgoeLUuXkzX1gSSl_qdqwwJvSV0YG4ygi9WuSZ6sgPiZqmtjjZ&amp;trk=pprof-0-ts-view_full-0" class="signup-button">View {{profile_overview.name}}'s Full Profile</a>
             			</div>
@@ -114,36 +100,34 @@
 
                     <section id="summary" class="profile-section">
                         <h3 class="title">Summary:</h3>
-                        <div class="description">
-                            {{description.content1}}<br><br> {{description.content2}}<br><br> {{description.content3}}<br><br> {{description.content4}}<br><br> {{description.content5}}
+                        <div class="description" ng-repeat="description in descriptions">
+                            {{description.content}}<br>
                         </div>
                     </section>
                     <section id ="experience" class="profile-section">
                     <h3 class="title">Experience</h3>
-                    <ul>
-                            <li>
-                                <header class="logo" style="float: right;">
-                                    <a href="https://www.linkedin.com/company/linkedin?trk=ppro_cprof"><img class="lazy-loaded" alt="LinkedIn" src="https://media.licdn.com/media/AAEAAQAAAAAAAAL0AAAAJGMwYWZhNTYxLWJkMTktNDAzMi05NzEzLTlhNzUxMGU0NDg0Mw.png"></a>
-                                </header>
-                                <h4 class="item-title"><a href="https://www.linkedin.com/title/ceo?trk=pprofile_title">CEO</a></h4>
-                                <h5 class="item-subtitle"><a href="https://www.linkedin.com/company/linkedin?trk=ppro_cprof">LinkedIn</a></h5>
-                                <span class="date-range"><time>December 2008</time> – Present (7 years 5 months)</span>
-
-                            </li>
-                            <li class="position reg-upsell"> 
+                    <ul ng-repeat="position in positions">
+                            <li class="position">
                                 <header class="logo">
-                                    <a href="https://www.linkedin.com/company/linkedin?trk=ppro_cprof"><img class="lazy-loaded" alt="LinkedIn" src="https://media.licdn.com/media/AAEAAQAAAAAAAAL0AAAAJGMwYWZhNTYxLWJkMTktNDAzMi05NzEzLTlhNzUxMGU0NDg0Mw.png"></a>
+                                    <a href={{position.href}}><img class="lazy-loaded" alt="LinkedIn" src={{position.logo_img}}></a>
                                 </header>
+                                <h4 class="item-title"><a href={{position.href_title}}>{{position.title_name}}</a></h4>
+                                <h5 class="item-subtitle"><a href={{position.href}}>{{position.subtitle_name}}</a></h5>
+                                <span class="date-range">{{position.date_range}}</span>
                             </li>
-
+                        </ul>
+                    </section>
+                     <section id ="skill" class="profile-section">
+                        <h3 class="title">Experience</h3>
+                        <ul class="skill">
+                             <li><a href="https://www.linkedin.com/topic/product-development?trk=pprofile_topic" title="Product Development"><span class="wrap">Product Development</span></a></li>
+                             <li><a href="https://www.linkedin.com/topic/product-development?trk=pprofile_topic" title="Product Development"><span class="wrap">Product Development</span></a></li>
                         </ul>
                     </section>
 
                 </div>
 
-                <div id="aux" class="col-md-5">
-                    
-                </div>
+              
             </div>
             
         </div>
