@@ -21,8 +21,9 @@
     <![endif]-->
   </head>
   <body class="background-main" ng-app="MyProfile">
-        <!-- header-panner -->
-                <div id="header-banner">
+        <div ng-controller="ExampleController">
+             <!-- header-panner -->
+             <div id="header-banner">
                 <div class="wrapper row">
                     <div class="col-md-1"></div>
 
@@ -51,19 +52,23 @@
                 </div>
             </div>
         <!-- body-code -->
-        <div id="layout-main" ng-controller="ExampleController">
+
+        <div id="layout-main">
+             <!-- background -->
+            <div class="edit_background">img</div>
+
             <div class="row" id="content-cv">
-                <div id="" class="col-md-8 col-md-offset-2">
+                <div id="" class="col-md-8 col-md-offset-1">
 
                     <section id="topcard" class="profile-section">
-                    	<div class="profile-card vcard row">
-	                    	<div class="profile-picture col-md-4">
+                        <div class="profile-card vcard row">
+                            <div class="profile-picture col-md-4">
                                 <a href="{{profile.href}}">
                                     <img src="{{profile.src}}">
                                 </a>
-	                    	</div>
+                            </div>
 
-	                    	<div class="profile-overview col-md-8">
+                            <div class="profile-overview col-md-8">
                                 <div class="profile-overview-content">
                                     <h1 id="name" class="fn">{{profile_overview.fullname}}</h1>
                                     <p class="headline title" data-section="headline">{{profile_overview.job}}</p>
@@ -85,25 +90,27 @@
                                     </div>
                                     <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile" title="Jeff is an Influencer" class="influencer-badge">Influencer</a>
                                 </div>
-	                    	</div>
-                    		
-                    	</div>
-                    	<div class="reg-upsell">
-                    		<h2>Join LinkedIn and access {{profile_overview.name}}’s full profile. It’s free!</h2>
-                    		<h3>As a LinkedIn member, you’ll join 400 million other professionals who are sharing connections, ideas, and opportunities.</h3>
-                    		<ul ng-repeat="aboutme in aboutmes">
+                            </div>
+                            
+                        </div>
+                        <div class="reg-upsell">
+                            <h2>Join LinkedIn and access {{profile_overview.name}}’s full profile. It’s free!</h2>
+                            <h3>As a LinkedIn member, you’ll join 400 million other professionals who are sharing connections, ideas, and opportunities.</h3>
+                            <ul ng-repeat="aboutme in aboutmes.info">
                                 <li>{{aboutme.name}}: {{aboutme.content}}</li>
-                			</ul>
-                			<a href="https://www.linkedin.com/start/view-full-profile?_ed=0_bKBkcZ6t9p27QdIgoeLUuXkzX1gSSl_qdqwwJvSV0YG4ygi9WuSZ6sgPiZqmtjjZ&amp;trk=pprof-0-ts-view_full-0" class="signup-button">View {{profile_overview.name}}'s Full Profile</a>
-            			</div>
+                            </ul>
+                            <a href="https://www.linkedin.com/start/view-full-profile?_ed=0_bKBkcZ6t9p27QdIgoeLUuXkzX1gSSl_qdqwwJvSV0YG4ygi9WuSZ6sgPiZqmtjjZ&amp;trk=pprof-0-ts-view_full-0" class="signup-button">View {{profile_overview.name}}'s Full Profile</a>
+                        </div>
                     </section>
-
+                    
+                    <!--SUMMARY-->
                     <section id="summary" class="profile-section">
-                        <h3 class="title">Summary:</h3>
-                        <div class="description" ng-repeat="description in descriptions">
+                        <h3 class="title">{{summary.name}}</h3>
+                        <div class="description" ng-repeat="description in summary.description">
                             {{description.content}}<br>
                         </div>
                     </section>
+                    <!-- EXPERIENCE -->
                     <section id ="experience" class="profile-section">
                     <h3 class="title">Experience</h3>
                     <ul ng-repeat="position in positions">
@@ -117,20 +124,61 @@
                             </li>
                         </ul>
                     </section>
+                    <!-- SKILL -->
                      <section id ="skill" class="profile-section">
-                        <h3 class="title">Experience</h3>
+                        <h3 class="title">Skill</h3>
                         <ul class="skill">
-                             <li><a href="https://www.linkedin.com/topic/product-development?trk=pprofile_topic" title="Product Development"><span class="wrap">Product Development</span></a></li>
-                             <li><a href="https://www.linkedin.com/topic/product-development?trk=pprofile_topic" title="Product Development"><span class="wrap">Product Development</span></a></li>
+                             <li ng-repeat="skill in skills"><a href={{skill.href}} title{{skill.title}}><span class="wrap">{{skill.name}}</span></a></li>
+                            
                         </ul>
                     </section>
-
+                    <!-- Experience -->
+                    <section id ="experience" class="profile-section">
+                    <h3 class="title">Experience</h3>
+                    <ul ng-repeat="position in positions">
+                            <li class="position">
+                                <header class="logo">
+                                    <a href={{position.href}}><img class="lazy-loaded" alt="LinkedIn" src={{position.logo_img}}></a>
+                                </header>
+                                <h4 class="item-title"><a href={{position.href_title}}>{{position.title_name}}</a></h4>
+                                <h5 class="item-subtitle"><a href={{position.href}}>{{position.subtitle_name}}</a></h5>
+                                <span class="date-range">{{position.date_range}}</span>
+                            </li>
+                        </ul>
+                    </section>
+                     <!-- EDUCATION -->
+                    <section id="education" class="profile-section">
+                        <h3 class="title">{{education.name}}</h3>
+                        <div class="description" ng-repeat="des in education.description">
+                            {{des.content}}<br>
+                        </div>
+                    </section>
+                        <!-- PROJECT -->
+                    <section id="project" class="profile-section">
+                        <h3 class="title">{{project.name}}</h3>
+                        <div class="description" ng-repeat="contents in project.contents">
+                            {{contents.content}}<br>
+                        </div>
+                    </section>
                 </div>
-
+            <!-- Foother -->
+                
               
             </div>
+             <div id="foother">
+                    <ul>
+                        <li ng-repeat="aboutme in aboutmes.info">
+                            {{aboutme.name}} : {{aboutme.content}}
+                        </li>
+                        
+                    </ul>
+                </div>
             
         </div>
+           
+            
+        </div>
+           
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

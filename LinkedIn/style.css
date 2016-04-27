@@ -1,7 +1,12 @@
 .background-main{
 	background-color: #dfdfdf;
 }
-
+.edit_background{
+    width: 100%;
+    height: 351px;
+    background-image: url('https://media.licdn.com/media/p/7/005/066/160/199ad4f.jpg');
+    position: fixed;
+}
 /*<header-banner>*/
 	#header-banner{
 	    position: fixed;
@@ -61,14 +66,18 @@
 
 #content-cv{
 	margin-top: 20px;
+    
 }
 #profile{
 	padding-top: 40px;
+
 }
 .profile-section{
 	margin-top: 2px;
-	background-color: #ffffff;
-	box-shadow: 1px 3px 15px #565957;
+    background-color:rgba(255, 255, 255, 0.8);
+	/*background-color: #ffffff;*/
+
+	box-shadow: 6px 7px 8px #565957;
 }
 .profile-picture {
 	padding:20px 20px 20px 20px;
@@ -77,6 +86,10 @@
 	vertical-align: middle;
 	height: 200px;
 	width: 200px;
+}
+#topcard{
+    margin-top: 60px;
+    padding:30px 30px 30px 30px;
 }
 #topcard #name {
     font-size: 26px;
@@ -222,8 +235,8 @@ h3{
     font-weight: bold;
 }
 .profile-section{
-    margin-top: 60px;
-    padding-bottom: 30px;
+    margin-top: 10px;
+    padding-bottom: 10px;
 }
 .profile-section .title {
     font-size: 20px;
@@ -279,12 +292,12 @@ ul{
 .skill li{
     text-align: center;
     display: inline-block;
-    list-style-type: circle;
+    list-style-type: none;
     background-color: #CFCDD6;
     line-height: 40px;
-    width: auto;
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin:10px 10px 10px 10px;
 }
 .skill li:hover{
     background-color: #226B96;
@@ -293,4 +306,27 @@ ul{
     color: #ffffff;
 }
 
-
+/*Education*/
+#education .description {
+    padding: 10px 10px 3px 35px;
+}
+/*Project*/
+#project .description {
+    padding: 10px 10px 3px 35px;
+}
+/*fooother*/
+#foother{
+    margin-top: 10px;
+    line-height: 120px;
+    position: absolute;
+    width: 100%;
+    background-color: #4A4846;
+    color:#ffffff;
+}
+#foother ul{
+    text-align: center;
+}
+#foother li{
+    display: inline-block;
+    margin-right: 100px
+}

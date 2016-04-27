@@ -3,7 +3,7 @@ angular.module('MyProfile', [])
         .controller('ExampleController', ['$scope','$http', function($scope, $http)
         {
             
-
+            
            $http.get('json/profile.json').success(function(data) {
               $scope.profile = data;
             });
@@ -20,14 +20,23 @@ angular.module('MyProfile', [])
               $scope.aboutmes = data;
             });    
 
-            $http.get('json/description.json').success(function(data) {
-              $scope.descriptions = data;
+            $http.get('json/summary.json').success(function(data) {
+              $scope.summary = data;
             });     
             
             $http.get('json/position.json').success(function(data) {
               $scope.positions = data;
             });  
-         
+            
+             $http.get('json/skill.json').success(function(data) {
+              $scope.skills = data;
+            }); 
+             $http.get('json/education.json').success(function(data) {
+              $scope.education = data;
+            });  
+             $http.get('json/project.json').success(function(data) {
+              $scope.project = data;
+            });  
        
            
         }]);
