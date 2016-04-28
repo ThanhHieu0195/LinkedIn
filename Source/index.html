@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LinkedIn HT</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="lib/angular.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="background-main" ng-app="MyProfile">
+        <div ng-controller="ExampleController">
+             <!-- header-panner -->
+             <div id="header-banner">
+                <div class="wrapper row">
+                    <div class="col-md-1"></div>
+
+                    <a class="banner-logo-container guest col-md-6" href="{{header.contents[0].href}}">
+                        <h2 id="li-logo" class="logo">{{header.contents[0].content}}</h2>
+                    </a>
+                   
+                    <nav role="navigation" class="nav guest-nav col-md-4" aria-label="Main site navigation" style="float: left; text-align: center;">
+                        <ul role="menubar">
+                            <li role="menuitem" class="nav-item">
+                                <a class="nav-link" href="{{header.contents[1].href}}">
+                                {{header.contents[1].content}}
+                                </a>
+                            </li>
+                            <li role="menuitem" class="nav-item">
+                                <a rel="nofollow" class="nav-link" href="{{header.contents[2].href}}">
+                                {{header.contents[2].content}}
+                                </a>
+                            </li>
+                            <li role="menuitem" class="nav-item">
+                                  <a rel="nofollow" class="nav-link" href="{{header.contents[3].href}}">
+                                {{header.contents[3].content}}</a>
+                             </li>
+                         </ul>
+                    </nav>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        <!-- body-code -->
+
+        <div id="layout-main">
+             <!-- background -->
+            <div class="edit_background">img</div>
+
+            <div class="row" id="content-cv">
+                <div id="" class="col-md-8 col-md-offset-1">
+
+                    <section id="topcard" class="profile-section">
+                        <div class="profile-card vcard row">
+                            <div class="profile-picture col-md-4">
+                                <a href="{{profile.href}}">
+                                    <img src="{{profile.src}}">
+                                </a>
+                            </div>
+
+                            <div class="profile-overview col-md-8">
+                                <div class="profile-overview-content">
+                                    <h1 id="name" class="fn">{{profile_overview.fullname}}</h1>
+                                    <p class="headline title" data-section="headline">{{profile_overview.job}}</p>
+                                    <dl id="demographics">
+                                        <dt>Location</dt>
+                                        <dd class="descriptor adr"><span class="locality">VietNam</span></dd>
+                                        <dt>Industry</dt>
+                                        <dd class="descriptor">Internet</dd>
+                                    </dl>
+                                    <div class="extra-info">
+                                      <table class="table table-striped">
+                                            <tbody>
+                                              <tr ng-repeat = "extra_info in extra_infos">
+                                                <td>{{extra_info.name}}</td>
+                                                <td>{{extra_info.content}}</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                    </div>
+                                    <a href="https://www.linkedin.com/today/influencers?trk=inf_bdg_profile" title="Jeff is an Influencer" class="influencer-badge">Influencer</a>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="reg-upsell">
+                            <h2>Join LinkedIn and access {{profile_overview.name}}’s full profile. It’s free!</h2>
+                            <h3>As a LinkedIn member, you’ll join 400 million other professionals who are sharing connections, ideas, and opportunities.</h3>
+                            <ul ng-repeat="aboutme in aboutmes.info">
+                                <li>{{aboutme.name}}: {{aboutme.content}}</li>
+                            </ul>
+                            <a href="https://www.linkedin.com/start/view-full-profile?_ed=0_bKBkcZ6t9p27QdIgoeLUuXkzX1gSSl_qdqwwJvSV0YG4ygi9WuSZ6sgPiZqmtjjZ&amp;trk=pprof-0-ts-view_full-0" class="signup-button">View {{profile_overview.name}}'s Full Profile</a>
+                        </div>
+                    </section>
+                    
+                    <!--SUMMARY-->
+                    <section id="summary" class="profile-section">
+                        <h3 class="title">{{summary.name}}</h3>
+                        <div class="description" ng-repeat="description in summary.description">
+                            {{description.content}}<br>
+                        </div>
+                    </section>
+                    <!-- EXPERIENCE -->
+                    <section id ="experience" class="profile-section">
+                    <h3 class="title">Experience</h3>
+                    <ul ng-repeat="position in positions">
+                            <li class="position">
+                                <header class="logo">
+                                    <a href={{position.href}}><img class="lazy-loaded" alt="LinkedIn" src={{position.logo_img}}></a>
+                                </header>
+                                <h4 class="item-title"><a href={{position.href_title}}>{{position.title_name}}</a></h4>
+                                <h5 class="item-subtitle"><a href={{position.href}}>{{position.subtitle_name}}</a></h5>
+                                <span class="date-range">{{position.date_range}}</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- SKILL -->
+                     <section id ="skill" class="profile-section">
+                        <h3 class="title">Skill</h3>
+                        <ul class="skill">
+                             <li ng-repeat="skill in skills"><a href={{skill.href}} title{{skill.title}}><span class="wrap">{{skill.name}}</span></a></li>
+                            
+                        </ul>
+                    </section>
+                    <!-- Experience -->
+                    <section id ="experience" class="profile-section">
+                    <h3 class="title">Experience</h3>
+                    <ul ng-repeat="position in positions">
+                            <li class="position">
+                                <header class="logo">
+                                    <a href={{position.href}}><img class="lazy-loaded" alt="LinkedIn" src={{position.logo_img}}></a>
+                                </header>
+                                <h4 class="item-title"><a href={{position.href_title}}>{{position.title_name}}</a></h4>
+                                <h5 class="item-subtitle"><a href={{position.href}}>{{position.subtitle_name}}</a></h5>
+                                <span class="date-range">{{position.date_range}}</span>
+                            </li>
+                        </ul>
+                    </section>
+                     <!-- EDUCATION -->
+                    <section id="education" class="profile-section">
+                        <h3 class="title">{{education.name}}</h3>
+                        <div class="description" ng-repeat="des in education.description">
+                            {{des.content}}<br>
+                        </div>
+                    </section>
+                        <!-- PROJECT -->
+                    <section id="project" class="profile-section">
+                        <h3 class="title">{{project.name}}</h3>
+                        <div class="description" ng-repeat="contents in project.contents">
+                            {{contents.content}}<br>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-md-2">
+                    <p>Music</p>
+
+                     <audio controls autoplay="true" loop="true" hidden="hidden">
+                       <source src="http://mp3.zing.vn/xml/load-song/MjAxNS8wMi8xMi82L2MvNmMwYjc5YTg1ZTUwYWNkOTk5YTBjMWY3NDczMTJlNGUubXAzfDEz" type="audio/ogg">
+                    </audio>
+                </div>
+            <!-- Foother -->
+                
+              
+            </div>
+             <div id="foother">
+                   
+                    <ul>
+                        <li ng-repeat="aboutme in aboutmes.info">
+                            {{aboutme.name}} : {{aboutme.content}}
+                        </li>
+
+                        
+                    </ul>
+                </div>
+            
+        </div>
+           
+            
+        </div>
+           
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js.js"></script>
+
+  </body>
+
+</html>
