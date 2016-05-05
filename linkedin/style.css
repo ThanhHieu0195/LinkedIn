@@ -246,13 +246,25 @@ h3{
     color: #434649;
     padding: 30px 35px 0;
 }
-
-#summary .description {
-    padding: 10px 10px 3px 35px;
+textarea{
+    width: 80%;
+    height: 100px;
 }
+
+.description {
+     white-space: pre-line;
+     padding-left: 10px;
+     padding-right: 10px;
+     margin-left: 30px;
+     margin-right: 30px;
+     border-left: 30px solid rgba(255, 0, 0, .2);
+     border-right: 30px solid rgba(255, 0, 0, .2);
+
+}
+
 .profile-section .description {
     font-size: 13px;
-    line-height: 17px;
+    line-height: 27px;
     color: #333;
     font-weight: normal;
     margin-top: 15px;
@@ -307,13 +319,11 @@ ul{
 }
 
 /*Education*/
-#education .description {
-    padding: 10px 10px 3px 35px;
-}
+    
+
+  
 /*Project*/
-#project .description {
-    padding: 10px 10px 3px 35px;
-}
+
 /*fooother*/
 #foother{
     margin-top: 10px;

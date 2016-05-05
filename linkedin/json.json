@@ -1,0 +1,156 @@
+{
+    "information_me":{
+                    "contents":[
+                        {
+                            "name": "Email",
+                            "content":"ThanhHieu0195@gmail.com"
+                        },
+                        {
+                            "name": "Phone",
+                            "content":"0973334905"
+                        },
+                        {
+                            "name": "Address",
+                            "content":"TTTM Vincom Thủ Đức, 216 Võ Văn Ngân, P. Bình Thọ, Q. Thủ Đức, Tp. Hồ Chí Minh"
+                        }
+                    ]},
+    "education":{
+                    "name":"Education",
+                    "contents":[
+                       {"content":"Trường Đại Học Khoa Học Tự Nhiên"},
+                       {"content":"Trường Đại học Khoa học Tự nhiên (tiếng Anh: The University of Science, viết tắt US) là một trường đại học thành viên thuộc Đại học Quốc gia Thành phố Hồ Chí Minh. Trường được thành lập tháng 3 năm 1996 trên cơ sở tách ra từ Trường Đai học Tổng hợp Thành phố Hồ Chí Minh, kế thừa truyền thống 20 năm của Trường Đại học Tổng hợp Thành phố Hồ Chí Minh với nhiệm vụ chính trị là đào tạo đội ngũ cán bộ khoa học cơ bản, tổ chức các hoạt động nghiên cứu khoa học và phát triển công nghệ, phục vụ đắc lực cho công cuộc xây dựng và bảo vệ tổ quốc. Trường là cơ sở đào tạo và nghiên cứu khoa học cơ bản đầu ngành của các tỉnh phía Nam."}
+                    ]
+                },
+    "history_me":{"contents":[               
+                    {
+                        "name":"current",
+                         "content":"Student of university of science"
+                     },
+                     {
+                         "name":"previous",
+                         "content":"Student at Hắc Dịch School"
+                    },
+                     {
+                            "name":"Education",
+                         "content": "Student at university of science"
+                     }
+                ]},
+    "header_banner":{
+                        "name":"header-banner",
+                        "contents":[
+                                    {"content":"LinkedIn Home",
+                                        "href":"http://www.linkedin.com/"},
+                                   { "content":"What is LinkedIn?",
+                                       "href":"http://www.linkedin.com/static?key=what_is_linkedin&amp;trk=hb_what/"},
+                                    {"content":"Join Today",
+                                        "href":"http://start/join?trk=hb_join"},
+                                    {"content":"Sign In",
+                                        "href":"https://www.linkedin.com/uas/login?goback=&amp;trk=hb_signin/"}
+                                ]
+
+                    },
+    "experience":{
+            "name":"experience",
+            "contents":[
+                    {
+                        "href":"https://www.linkedin.com/company/linkedin?trk=ppro_cprof",
+                        "logo_img":"https://media.licdn.com/media/AAEAAQAAAAAAAAL0AAAAJGMwYWZhNTYxLWJkMTktNDAzMi05NzEzLTlhNzUxMGU0NDg0Mw.png",
+                        "title_href":"https://www.linkedin.com/title/ceo?trk=pprofile_title",
+                        "title_name":"CEO",
+                        "subtitle_name":"LinkedIn",
+                        "date_range":"December 2008 – Present (7 years 5 months)"
+                    },
+                       {
+                        "href":"https://www.linkedin.com/company/linkedin?trk=ppro_cprof",
+                        "logo_img":"https://media.licdn.com/media/p/2/000/205/177/3cfd5b9.png",
+                        "title_href":"https://www.linkedin.com/title/ceo?trk=pprofile_title",
+                        "title_name":"Member, Board of Directors",
+                        "subtitle_name":"Intuit",
+                        "date_range":"April 2012 – Present (4 years 1 month)"
+                    },
+                    {
+                       "href":"https://www.linkedin.com/company/linkedin?trk=ppro_cprof",
+                        "logo_img":"https://media.licdn.com/media/AAEAAQAAAAAAAAIEAAAAJGFhNGYyNjBjLWUxOWItNDRlYi05MTY0LTE5ZDA3YThhMTRkYg.png",
+                        "title_href":"https://www.linkedin.com/title/ceo?trk=pprofile_title",
+                        "title_name":"Member, Board of Directors",
+                        "subtitle_name":"DonorsChoose",
+                        "date_range":"2007 – Present (9 years)"
+                    },
+                     {
+                        "href":"https://www.linkedin.com/company/linkedin?trk=ppro_cprof",
+                        "logo_img":" https://media.licdn.com/media/p/5/005/00c/1bf/134d5ca.png",
+                        "title_href":"https://www.linkedin.com/title/ceo?trk=pprofile_title",
+                        "title_name":"Member, Board of Directors",
+                        "subtitle_name":"Boys & Girls Clubs of the Peninsula",
+                        "date_range":"2011 – Present (5 years)San Francisco Bay Area"
+                    }
+                ]
+        },
+    "avatar":
+            {
+                "src":"https://scontent-hkg3-1.xx.fbcdn.net/hphotos-xlf1/v/t1.0-9/12523838_718274544975975_1141486030227918097_n.jpg?oh=872d85396d1bfcf960cad724c03c1b98&oe=57A1357F",
+                "href":"https://www.facebook.com/0195thanhhieu"
+                },
+    "introduce":
+                {
+                    "name":"Hiếu Thanh",
+                    "fullname":"Trần Cao Thanh Hiếu",
+                    "job":"university of science"
+                },
+    "project":{
+                    "name":"Project",
+                    "contents":
+                    [
+                        {"content":"Thời gian: 27/04/2016"},
+                        {"content":"Frame: Bootstrap, AngularJs"},
+                        {"content":"Mức độ hoàn thành: 100%"}
+                    ]
+                },
+         "skill":{
+                    "name":"Skill",
+                    "contents":[   
+                        {
+                            "name":"Product Development",
+                            "href":"https://www.linkedin.com/topic/product-development?trk=pprofile_topic",
+                            "title":"Product Development"
+                        },
+                         {
+                            "name":"Corporate Development",
+                            "href":"https://www.linkedin.com/topic/corporate-development?trk=pprofile_topic",
+                            "title":"Corporate Development"
+                        },
+                         {
+                            "name":"Product Marketing",
+                            "href":"https://www.linkedin.com/topic/product-development?trk=pprofile_topic",
+                            "title":"Product Marketing"
+                        },
+                         {
+                            "name":"LinkedLn",
+                            "href":"https://www.linkedin.com/topic/product-development?trk=pprofile_topic",
+                            "title":"LinkedLn"
+                        },
+                         {
+                            "name":"Team Leadership",
+                            "href":"https://www.linkedin.com/topic/product-development?trk=pprofile_topic",
+                            "title":"Team Leadership"
+                        },
+                         {
+                            "name":"Education",
+                            "href":"https://www.linkedin.com/topic/product-development?trk=pprofile_topic",
+                            "title":"Education"
+                        }
+                    ]
+
+
+         },
+        "summary":{
+                    "name":"Summary",
+                    "contents":[
+                        {"content":"Tôi là Hiếu sinh viên năm 3 trường Khoa Học Tự Nhiên TP.HCM, chuyên nghành đang theo học là công nghệ thông tin."},
+                        {"content":"Sở thích: ăn vặt, xem anime, đọc manga, tham gia mạng xã hội, nghiên cứu các lĩnh vực ứng dụng."},
+                        {"content":"Định hướng bản thân: theo đuổi 2 nền tảng web và mobile. Đánh mạnh vào web."},
+                        {"content":"Lựa chọn nghành đơn giản vì đam mê của bản thân, sự động viên của gia đình và người thân."},
+                        {"content":"Thông tin liên hệ: Trần Cao Thanh Hiêu _ SDT:0973334905 _ thanhhieu0195@gmail.com"}
+                    ]
+                }
+}
